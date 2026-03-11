@@ -1,0 +1,188 @@
+/* RESET */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f7f7f7;
+  color: #333;
+}
+
+/* CONTAINER */
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* NAVBAR */
+
+.navbar {
+  background: white;
+  border-bottom: 1px solid #ddd;
+}
+
+.nav-container {
+  max-width: 1000px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+}
+
+.logo a {
+  font-size: 22px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #444;
+  font-weight: 500;
+}
+
+.nav-links a:hover {
+  color: black;
+}
+
+.mobile-menu-btn {
+  display: none;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* HERO */
+
+.hero {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.hero h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  color: #777;
+}
+
+/* POSTS */
+
+.posts {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* POST CARD */
+
+.post-card {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.post-title {
+  margin-bottom: 10px;
+}
+
+.post-preview {
+  color: #555;
+  margin-bottom: 15px;
+}
+
+/* BUTTONS */
+
+.post-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.btn {
+  padding: 6px 12px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.read {
+  background: #0077ff;
+  color: white;
+}
+
+.edit {
+  background: #ffaa00;
+  color: white;
+}
+
+.delete {
+  background: #ff4444;
+  color: white;
+}
+
+/* FORM */
+
+.post-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+input,
+textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.primary {
+  background: #0077ff;
+  color: white;
+  padding: 10px;
+}
+
+/* FOOTER */
+
+.footer {
+  margin-top: 50px;
+  padding: 20px;
+  text-align: center;
+  color: #666;
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+  .nav-links {
+    display: none;
+  }
+
+  .mobile-menu-btn {
+    display: block;
+  }
+
+}
