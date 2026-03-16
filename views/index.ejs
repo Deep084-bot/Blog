@@ -1,14 +1,36 @@
 <!-- HEADER PARTIAL GOES HERE -->
+ <%- include("partials/header.ejs"); %>
+
+ <nav class="navbar">
+
+  <div class="nav-container">
+
+    <div class="logo">
+      <a href="/">MyBlog</a>
+    </div>
+
+    <ul class="nav-links">
+      <li>
+        <a href="/">Home</a>
+      </li>
+
+      <li>
+        <a href="/create">Create Post</a>
+      </li>
+    </ul>
+
+    <div class="mobile-menu-btn">
+      ☰
+    </div>
+
+  </div>
+
+</nav>
 
 <header class="hero">
   <h1>My Blog</h1>
   <p>Write. Share. Think.</p>
 </header>
-
-<nav class="nav">
-  <a href="/">Home</a>
-  <a href="/create">Create Post</a>
-</nav>
 
 <main class="container">
 
@@ -25,7 +47,7 @@
 
       <div class="post-actions">
         <a class="btn read">Read More</a>
-        <a class="btn edit">Edit</a>
+        <a class="btn edit" href="/edit">Edit</a>
         <button class="btn delete">Delete</button>
       </div>
     </article>
@@ -37,3 +59,4 @@
 </main>
 
 <!-- FOOTER PARTIAL GOES HERE -->
+ <%- include("partials/footer.ejs"); %>
