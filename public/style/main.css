@@ -1,5 +1,3 @@
-/* RESET */
-
 * {
   margin: 0;
   padding: 0;
@@ -12,19 +10,16 @@ body {
   color: #333;
 }
 
-/* CONTAINER */
-
 .container {
   max-width: 900px;
   margin: auto;
   padding: 20px;
 }
 
-/* NAVBAR */
-
 .navbar {
   background: white;
   border-bottom: 1px solid #ddd;
+  position: relative;
 }
 
 .nav-container {
@@ -47,6 +42,7 @@ body {
   list-style: none;
   display: flex;
   gap: 20px;
+  transition: all 0.3s ease;
 }
 
 .nav-links a {
@@ -65,8 +61,6 @@ body {
   cursor: pointer;
 }
 
-/* HERO */
-
 .hero {
   text-align: center;
   padding: 50px 20px;
@@ -81,15 +75,11 @@ body {
   color: #777;
 }
 
-/* POSTS */
-
 .posts {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
-
-/* POST CARD */
 
 .post-card {
   background: white;
@@ -105,13 +95,13 @@ body {
 .post-preview {
   color: #555;
   margin-bottom: 15px;
+  word-wrap: break-word;
 }
-
-/* BUTTONS */
 
 .post-actions {
   display: flex;
   gap: 10px;
+  flex-wrap: wrap;
 }
 
 .btn {
@@ -121,6 +111,11 @@ body {
   cursor: pointer;
   text-decoration: none;
   font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.btn:hover {
+  opacity: 0.85;
 }
 
 .read {
@@ -138,8 +133,6 @@ body {
   color: white;
 }
 
-/* FORM */
-
 .post-form {
   display: flex;
   flex-direction: column;
@@ -156,6 +149,7 @@ textarea {
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 6px;
+  font-size: 14px;
 }
 
 .primary {
@@ -164,8 +158,6 @@ textarea {
   padding: 10px;
 }
 
-/* FOOTER */
-
 .footer {
   margin-top: 50px;
   padding: 20px;
@@ -173,16 +165,36 @@ textarea {
   color: #666;
 }
 
-/* MOBILE */
-
 @media (max-width: 600px) {
 
   .nav-links {
     display: none;
+    flex-direction: column;
+    gap: 10px;
+    background: white;
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+  }
+
+  .nav-links.active {
+    display: flex;
   }
 
   .mobile-menu-btn {
     display: block;
+  }
+
+  .post-actions {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
   }
 
 }

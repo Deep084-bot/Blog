@@ -1,35 +1,20 @@
-// MOBILE MENU
-
 const menuBtn = document.querySelector(".mobile-menu-btn");
 const navLinks = document.querySelector(".nav-links");
 
-if (menuBtn) {
+if (menuBtn && navLinks) {
   menuBtn.addEventListener("click", () => {
-
-    if (navLinks.style.display === "flex") {
-      navLinks.style.display = "none";
-    } else {
-      navLinks.style.display = "flex";
-    }
-
+    navLinks.classList.toggle("active");
   });
 }
 
+const deleteForms = document.querySelectorAll(".delete-form");
 
-// DELETE CONFIRMATION
-
-const deleteButtons = document.querySelectorAll(".delete");
-
-deleteButtons.forEach((btn) => {
-
-  btn.addEventListener("click", (e) => {
-
+deleteForms.forEach((form) => {
+  form.addEventListener("submit", (e) => {
     const confirmDelete = confirm("Are you sure you want to delete this post?");
-
+    
     if (!confirmDelete) {
       e.preventDefault();
     }
-
   });
-
 });

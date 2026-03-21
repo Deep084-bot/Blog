@@ -1,31 +1,4 @@
-<!-- HEADER PARTIAL GOES HERE -->
- <%- include("partials/header.ejs"); %>
-
- <nav class="navbar">
-
-  <div class="nav-container">
-
-    <div class="logo">
-      <a href="/">MyBlog</a>
-    </div>
-
-    <ul class="nav-links">
-      <li>
-        <a href="/">Home</a>
-      </li>
-
-      <li>
-        <a href="/create">Create Post</a>
-      </li>
-    </ul>
-
-    <div class="mobile-menu-btn">
-      ☰
-    </div>
-
-  </div>
-
-</nav>
+<%- include("partials/header.ejs"); %>
 
 <header class="hero">
   <h1>My Blog</h1>
@@ -33,30 +6,34 @@
 </header>
 
 <main class="container">
-
   <section class="posts">
 
-    <!-- LOOP THROUGH POSTS HERE -->
+    <% for (let i = 0; i < posts.length; i++) { %>
+      <% const element = posts[i]; %>
 
-    <article class="post-card">
-      <h2 class="post-title">Post Title</h2>
+      <article class="post-card">
+        <h2 class="post-title"><%= element.title %></h2>
 
-      <p class="post-preview">
-        Post preview text goes here. Only show a short portion of the content.
-      </p>
+        <p class="post-preview">
+          <%= element.content.substring(0, 120) %>...
+        </p>
 
-      <div class="post-actions">
-        <a class="btn read">Read More</a>
-        <a class="btn edit" href="/edit">Edit</a>
-        <button class="btn delete">Delete</button>
-      </div>
-    </article>
+        <p><strong><%= element.author %></strong></p>
 
-    <!-- END LOOP -->
+        <div class="post-actions">
+          <a class="btn read" href="/post/<%= element.id %>">Read More</a>
+
+          <a class="btn edit" href="/edit/<%= element.id %>">Edit</a>
+
+          <form action="/delete/<%= element.id %>" method="POST" style="display:inline;">
+            <button class="btn delete">Delete</button>
+          </form>
+        </div>
+      </article>
+
+    <% } %>
 
   </section>
-
 </main>
 
-<!-- FOOTER PARTIAL GOES HERE -->
- <%- include("partials/footer.ejs"); %>
+<%- include("partials/footer.ejs"); %>
