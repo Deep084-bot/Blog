@@ -1,33 +1,27 @@
 <%- include("partials/header.ejs"); %>
 
-<nav class="navbar">
-  <div class="nav-container">
-    <div class="logo">
-      <a href="/">MyBlog</a>
-    </div>
+<header class="page-header post-header">
+  <h1 class="post-full-title"><%= post.title %></h1>
 
-    <ul class="nav-links">
-      <li><a href="/">Home</a></li>
-      <li><a href="/create">Create Post</a></li>
-    </ul>
-  </div>
-</nav>
-
-<header class="page-header">
-  <h1><%= post.title %></h1>
+  <p class="post-meta">
+    By <strong><%= post.author %></strong> • 
+    <%= new Date(post.date).toDateString() %>
+  </p>
 </header>
 
 <main class="container">
 
   <article class="post-full">
-    <p><strong>By <%= post.author %></strong></p>
 
-    <p>
+    <div class="post-content">
       <%= post.content %>
-    </p>
+    </div>
+
   </article>
 
-  <a href="/" class="btn">← Back to Home</a>
+  <div class="post-footer-actions">
+    <a href="/" class="btn back-btn">← Back to Home</a>
+  </div>
 
 </main>
 

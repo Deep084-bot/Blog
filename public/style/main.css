@@ -198,3 +198,55 @@ textarea {
   }
 
 }
+
+.post-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.post-full-title {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.post-meta {
+  color: #777;
+  font-size: 14px;
+}
+
+
+.post-full {
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  line-height: 1.7;
+}
+
+.post-content {
+  font-size: 16px;
+  color: #444;
+  white-space: pre-line; 
+}
+
+.post-footer-actions {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.back-btn {
+  background: #333;
+  color: white;
+}
+@media (max-width: 600px) {
+
+  .nav-links {
+    display: none;
+  }
+
+  .nav-links.active {
+    display: flex;
+    flex-direction: column;
+  }
+
+}

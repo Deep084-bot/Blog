@@ -6,8 +6,7 @@
 
 <main class="container">
 
-  <form class="post-form" method="POST" action="/edit/<%= post.id %>?_method=PUT">
-
+<form class="post-form" method="POST" action="/edit/<%= post.id %>">
     <div class="form-group">
       <label>Title</label>
       <input type="text" name="title" value="<%= post.title %>" required>

@@ -30,6 +30,9 @@ let posts = [
     date: "2023-08-10T09:15:00Z",
   },
 ];
+const id = posts.length;
+const now = new Date();
+const isoString = now.toISOString();
 
 router.get('/', (req, res) => {
     res.render("index.ejs", {
@@ -38,13 +41,36 @@ router.get('/', (req, res) => {
 });
 
 router.get('/edit/:id', (req, res) => {
-  const id = req.params.id;
-  res.render("edit.ejs", { id });
+  const id = parseInt(req.params.id);
+
+  const post = posts.find(p => p.id === id);
+
+  res.render("edit.ejs", { post });
+});
+
+router.post('/edit/:id', (req, res) => {
+  const id = parseInt(req.params.id);
+  const post = posts.find(p => p.id === id);
+  post.title = req.body.title;
+  post.content = req.body.content;
+  res.redirect('/');
 });
 
 router.get('/create', (req, res) => {
     res.render("create.ejs");
 });
+
+router.post('/create', (req, res) => {
+    const newPost = {
+        id: id + 1,
+        title: req.body.title,
+        content: req.body.content,
+        author: req.body.author || "Anonymous",
+        date: isoString
+    }
+    posts.push(newPost);
+    res.redirect('/');
+})
 
 router.post('/delete/:id', (req, res) => {
   const id = parseInt(req.params.id);
